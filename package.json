@@ -1,0 +1,22 @@
+{
+  "name": "interlink",
+  "version": "0.0.1",
+  "description": "p2p service function chaining",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/corenova/interlink"
+  },
+  "keywords": [
+    "interlink",
+    "faas",
+    "serverless",
+    "sam",
+    "mqtt"
+  ],
+  "author": "Peter K. Lee <peter@corenova.com>",
+  "license": "Apache-2.0"
+}

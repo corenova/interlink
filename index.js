@@ -1,6 +1,7 @@
 'use strict';
 
-const INTERLINK = process.env.INTERLINK || 'ws://interlink.io'
+const INTERLINK_URL = process.env.INTERLINK_URL || 'ws://interlink.io'
+const INTERLINK_KEY = process.env.INTERLINK_KEY
 
 //
 // use kinetic object stream (http://github.com/corenova/kos)
@@ -40,10 +41,13 @@ interlink.io = function(m, opts={}) {
 function interlink(fn, opts={}) {
   if (typeof fn !== 'function' || fn.kinetic instanceof kos) return fn
 
+  opts.url = opts.url || INTERLINK_URL
+  opts.key = opts.key || INTERLINK_KEY
+
   // setup the kinetic object stream state machine
   // 
   // refer to main README for more information
-  var kinetic = kos(opts.url || INTERLINK, opts)
+  var kinetic = kos(opts)
   kinetic
     .in('trigger').out('trigger/aws-lambda','trigger/azure-func','trigger/gce-cloudf').bind(detect)
     .in('action','event','trigger/aws-lambda').out('request','response','error').bind(AwsLambda.invoke)

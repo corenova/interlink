@@ -1,7 +1,7 @@
 {
   "name": "interlink",
-  "version": "0.0.1",
-  "description": "p2p service function chaining",
+  "version": "1.0.0",
+  "description": "serverless function chaining without borders",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,9 @@
     "mqtt"
   ],
   "author": "Peter K. Lee <peter@corenova.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "mqtt": "^2.3.0"
+  },
+  "bundleDependencies": [ 'mqtt' ]
 }

@@ -21,6 +21,5 @@
   "license": "Apache-2.0",
   "dependencies": {
     "mqtt": "^2.3.0"
-  },
-  "bundleDependencies": [ 'mqtt' ]
+  }
 }
